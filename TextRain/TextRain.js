@@ -2,7 +2,7 @@
 //globals
 var messages = [];
 var nextId = 0;
-var maxMessage = 1;
+var maxMessage = 10;
 var container;
 var maxY = 400;
 var maxX = 0;
@@ -37,8 +37,8 @@ function initialize() {
     //Initialize animation
     setInterval(animateMessages,1000/60);
     addMessage('foobar1');
-    //addMessage('foobar2');
-    //addMessage('foobar3');
+    addMessage('foobar2');
+    addMessage('foobar3');
 
 };
 
@@ -46,8 +46,8 @@ function initialize() {
 function addMessage(newMessageText) {
 
     $.each(messages,function(index,m) {
-        console.log('checking');
-        if (!m.enabled) {
+        console.log('checking', messages.length);
+        if (!messages[index].enabled) {
 
             console.log('added new message');
 
@@ -57,9 +57,9 @@ function addMessage(newMessageText) {
             m.speed = (Math.random() * 1) + 2;
             m.message = newMessageText;
             $(container).append("<div class='TextRain' id='" + m.id + "' >" + m.message + "</div>");
+            m.enabled = true;
 
             messages[index] = m;
-            m.enabled = true;
 
             return false;
 
@@ -82,12 +82,9 @@ function animateMessages()
                 m.x = Math.random() * maxX;
                 m.speed = (Math.random() * 1)+2;
                 m.enabled=false;
-
+                $(m.selector).remove();
                 messages[index] = m;
-                console.log(m.id);
-                $(container).remove(m.selector);
 
-                messages[index] = m;
 
             }
             else {
@@ -95,8 +92,6 @@ function animateMessages()
                 //Animate
                 m.y = m.y + m.speed;
                 messages[index] = m;
-
-                console.log(m.y);
 
                 $(m.selector).css('top',(m.y + 'px'));
                 $(m.selector).css('left',(m.x + 'px'));

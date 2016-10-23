@@ -46,8 +46,8 @@
       <file leaf-file-name="TextRain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TextRain/TextRain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            <state relative-caret-position="150">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -215,12 +215,12 @@
       <option name="presentableId" value="Default" />
       <updated>1477246436112</updated>
       <workItem from="1477246437957" duration="1444000" />
-      <workItem from="1477252793508" duration="432000" />
+      <workItem from="1477252793508" duration="1176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1876000" />
+    <option name="totallyTimeSpent" value="2620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -302,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TextRain/TextRain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding />
         </state>
       </provider>
