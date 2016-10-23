@@ -1,0 +1,31 @@
+body {
+    width:100%;
+    height:100%;
+    background-color:black;
+    color:black;
+}
+
+#container {
+    position:absolute;
+    width:100%;
+    height:100vh;
+}
+
+.TextRain {
+    position : absolute;
+    font-size : 22px;
+    font-weight : bold;
+    font-family : arial;
+    color : rgba(225,225,255,1);
+}
+
+#content {
+
+    padding:auto;
+    margin:auto;
+    width:50%;
+    height:200px;
+    background-color:red;
+    z-index:10;
+
+}
