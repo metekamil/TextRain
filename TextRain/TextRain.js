@@ -5,10 +5,12 @@ var nextId = 0;
 var maxMessage = 1;
 var container;
 var maxY = 400;
-var maxX = $(document).width()-50;
+var maxX = 0;
 
 //Initialize the  effect
 $(document).ready( function() {
+
+    maxX = $(document).width()-50;
     initialize();
 });
 
@@ -44,7 +46,10 @@ function initialize() {
 function addMessage(newMessageText) {
 
     $.each(messages,function(index,m) {
+        console.log('checking');
         if (!m.enabled) {
+
+            console.log('added new message');
 
             //Initialize new message document
             m.y = 0;
