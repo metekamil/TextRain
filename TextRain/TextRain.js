@@ -21,9 +21,6 @@ function TextRain(containerId) {
 
         var newMessage = {
             enabled : false,
-            y : 0,
-            x : Math.random() * this.maxX,
-            speed : (Math.random() * 1) + 10,
             id : 'm' + x,
             selector : '#m' + x
         };
@@ -49,11 +46,14 @@ TextRain.prototype.addMessage = function(msgText) {
 
                 //Initialize new message document
                 m.y = 0;
-                m.fontsize = 20+(Math.random()*15);
+                m.fontsize = 12+(Math.random()*20);
                 m.x = Math.random() * that.maxX;
-                m.speed = (Math.random() * 1) + 2;
+                m.speed = (Math.random() * 5);
                 m.message = newMessageText;
+                m.alpha = m.y / that.maxY;
                 $(container).append("<div class='TextRain' id='" + m.id + "' >" + m.message + "</div>");
+                $(m.selector).css('top',(m.y + 'px'));
+                $(m.selector).css('left',(m.x + 'px'));
                 m.enabled = true;
 
                 that.messages[index] = m;
@@ -63,7 +63,7 @@ TextRain.prototype.addMessage = function(msgText) {
             }
         });
 
-    },Math.random()*1500);
+    },Math.random()*500);
 
 }
 
@@ -89,16 +89,19 @@ TextRain.prototype.animateMessages = function()
             }
             else {
 
-                m.y = m.y + m.speed;
+                //Update Object
+                m.y += + m.speed;
                 m.alpha = m.y/that.maxY;
+
+                //Render Object
+                $(m.selector).css('top',(m.y + 'px'));
+                $(m.selector).css('left',(m.x + 'px'));
+                $(m.selector).css('font-size',m.fontsize + 'px');
+                $(m.selector).css('opacity',m.alpha*3);
+                $(m.selector).html(m.message);
 
                 that.messages[index] = m;
 
-                $(m.selector).css('font-size',m.fontsize + 'px');
-                $(m.selector).css('opacity',m.alpha*3);
-                $(m.selector).css('top',(m.y + 'px'));
-                $(m.selector).css('left',(m.x + 'px'));
-                $(m.selector).html(m.message);
 
             }
         }
