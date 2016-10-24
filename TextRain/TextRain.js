@@ -37,34 +37,33 @@ function TextRain(containerId) {
 //Initialize a new message
 TextRain.prototype.addMessage = function(msgText) {
 
-
     var that = this;
     var newMessageText = msgText;
     setTimeout(function(){
 
-    $.each(that.messages,function(index,m) {
-        console.log('checking', that.messages.length);
-        if (!that.messages[index].enabled) {
+        $.each(that.messages,function(index,m) {
+            console.log('checking', that.messages.length);
+            if (!that.messages[index].enabled) {
 
-            console.log('added new message');
+                console.log('added new message');
 
-            //Initialize new message document
-            m.y = 0;
-            m.fontsize = 20+(Math.random()*25);
-            m.x = Math.random() * that.maxX;
-            m.speed = (Math.random() * 1) + 2;
-            m.message = newMessageText;
-            $(container).append("<div class='TextRain' id='" + m.id + "' >" + m.message + "</div>");
-            m.enabled = true;
+                //Initialize new message document
+                m.y = 0;
+                m.fontsize = 20+(Math.random()*15);
+                m.x = Math.random() * that.maxX;
+                m.speed = (Math.random() * 1) + 2;
+                m.message = newMessageText;
+                $(container).append("<div class='TextRain' id='" + m.id + "' >" + m.message + "</div>");
+                m.enabled = true;
 
-            that.messages[index] = m;
+                that.messages[index] = m;
 
-            return false;
+                return false;
 
-        }
-    });
+            }
+        });
 
-    },Math.random()*1000);
+    },Math.random()*1500);
 
 }
 
